@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Practice Wirting</title>
+    <style>
+    body{
+        font-size: 50px;
+        color:chartreuse;
+        font-weight: bolder;
+        font-family: serif;
+        text-align: center;
+        background-image: url(../shuspea.jpg);
+        background-size: cover;
+        
+    }
+
+    #wordwritepagesma.hidden{
+            display:none;
+        }
+
+    .content{
+        background-color: rgba(36, 35, 35, 0.7);
+    }
+
+    #start{
+        font-size: 50px;
+        background-color: purple;
+        color:chartreuse;
+        border-radius: 10px;
+        transition: all;
+        cursor: pointer;
+    }
+
+    #start:hover{
+        background-color: antiquewhite;
+    }
+    #talking{
+        font-size: 40px;
+        background-color: rgba(36, 35, 35, 0.7);
+    }
+
+    #begin.hidden,
+    #talking.hidden{
+        display: none;
+    }
+
+    #theme,
+    #old,
+    #newwrite,
+    #oneq,
+    #twoq,
+    #threeq,
+    #fourq,
+    #fiveq,
+    #sixq,
+    #sevenq,
+    #eightq,
+    #nineq,
+    #tenq{
+        color:rgb(232, 101, 193);
+    }
+
+    #topicbtn{
+        font-size: 30px;
+        background-color: purple;
+        color:chartreuse;
+        border-radius: 10px;
+    }
+
+    #answer{
+        font-size: 30px;
+        font-family: serif;
+        border-radius: 5px;
+    }
+
+    #ok,
+    #oktwo,
+    #okthree{
+        font-size: 30px;
+        background-color:chartreuse;
+        color: purple;
+        border-radius: 10px;
+    }
+
+    #search.hidden{
+        display: none;
+    }
+
+    #wordwritepage.hidden{
+        display: none;
+    }
+
+    .words{
+        text-align: left;
+    }
+
+    #wordspage{
+        font-size: 50px;
+        font-weight: bolder;
+    }
+
+    #writepage.hidden{
+        display: none;
+    }
+
+    #newanswer{
+        font-size: 33px;
+        font-family: serif;
+    }
+    
+    #test.hidden{
+        display: none;
+    }
+
+    #onean,
+    #twoan,
+    #threean,
+    #fouran,
+    #fivean,
+    #sixan,
+    #sevenan,
+    #eightan,
+    #ninean,
+    #tenan{
+        font-size: 30px;
+        border-radius: 6px;;
+    }
+
+    #checkone,
+    #checktwo,
+    #checkthree,
+    #checkfour,
+    #checkfive,
+    #checksix,
+    #checkseven,
+    #checkeight,
+    #checknine,
+    #checkten,
+    #okthrees,
+    #finish{
+        font-size: 30px;
+        font-size: 30px;
+        background-color:chartreuse;
+        color: purple;
+        border-radius: 10px;
+    }
+
+    #oneq.hidden,
+    #twoq.hidden,
+    #threeq.hidden,
+    #fourq.hidden,
+    #fiveq.hidden,
+    #sixq.hidden,
+    #sevenq.hidden,
+    #eightq.hidden,
+    #nineq.hidden,
+    #tenq.hidden{
+        display: none;
+    }
+
+    #end.hidden,
+    #select.hidden{
+        display: none;
+    }
+
+    
+    @media screen and (max-width: 768px) {
+	    body {
+		    font-size: 16px;
+            background-image: url(../smartphone.jpg);
+	    }
+
+        #newanswer,
+        #answer{
+            display: none;
+        }
+        
+        #start{
+            font-size: 16px;
+        }
+
+        p{
+            font-size: 16px;
+        }
+
+        #newanswersma{
+            font-size: 16px;
+        }
+
+        #topicbtn,
+        #ok,
+        #oktwo{
+            font-size: 16px;
+        }
+
+        #onean,
+        #twoan,
+        #threean,
+        #fouran,
+        #fivean,
+        #sixan,
+        #sevenan,
+        #eightan,
+        #ninean,
+        #tenan,
+        #checkone,
+        #checktwo,
+        #checkthree,
+        #checkfour,
+        #checkfive,
+        #checksix,
+        #checkseven,
+        #checkeight,
+        #checknine,
+        #checkten,
+        #okthrees,
+        #finish{
+            font-size: 16px;
+        }
+
+        #wordwritepage,
+        #wordwritepage.hidden
+        #wordwritepagesma.hidden{
+            display: none;
+        }
+
+        #okthree{
+            font-size: 16px;
+        }
+    }
+
+    @media screen and (min-width:640px){
+        .kaione,
+        .kaitwo,
+        .kaithree,
+        .kaifour,
+        .kaifive,
+        .kaisix,
+        #newanswersma,
+        #answersma {
+            display: none;
+        }
+
+        #wordwritepagesma,
+        #wordwritepagesma.hidden{
+            display:none;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <div id="begin">
+        <div class="smart"><br class="kaione"><br class="kaitwo"><br class="kaithree"><br class="kaifour"><br class="kaifive"><br class="kaisix">
+        <div class="content">
+        <p>英語を書くには、練習あるのみ。<br>単語を覚えて英語を使いこなそう！</p>
+        </div><br><br>
+        <input type="button" id="start" value="Let's write! >">
+    </div>
+    </div>
+    <div id="talking" class="hidden">
+        <div id="select">
+        <p>Today's topic,,,</p>
+        <input type="button" id="topicbtn" value="choose">
+        <p id="theme"></p>
+        </div>
+        <div id="writepage">
+        <p>➀まずは何も見ずに書いてみよう</p>
+        <textarea id="answer" cols="70" rows="9" ></textarea><br>
+        <textarea id="answersma" cols="30" rows="20" ></textarea><br>
+        <input type="button" id="ok" value="ok!">
+        </div>
+        <div id="search" class="hidden">
+        <p>➁単語、文法を調べて書いてみよう</p>
+        <p id="old"></p>
+        <textarea id="newanswer" cols="70" rows="9" ></textarea><br>
+        <textarea id="newanswersma" cols="30" rows="20" ></textarea><br>
+        <input type="button" id="oktwo" value="ok!">
+        </div>
+        <div id="wordwritepage" class="hidden">
+        <p>➂知らなかった単語を書き出そう</p>
+        <p id="newwrite"></p>
+        <p class="words">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;意味&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;単語</p>
+        <div id="wordspage">
+            <input type="text" id="one">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" id="oneen"><br>
+            <input type="text" id="two">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" id="twoen"><br>
+            <input type="text" id="three">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" id="threeen"><br>
+            <input type="text" id="four">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" id="fouren"><br>
+            <input type="text" id="five">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" id="fiveen"><br>
+            <input type="text" id="six">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" id="sixen"><br>
+            <input type="text" id="seven">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" id="sevenen"><br>
+            <input type="text" id="eight">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" id="eighten"><br>
+            <input type="text" id="nine">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" id="nineen"><br>
+            <input type="text" id="ten">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" id="tenen"><br>
+            <p>知らなかった単語の数</p>
+            <input type="number" id="wordsnumber">個<br>
+            <input type="button" id="okthree" value="ok!">
+            </div>
+            </div>
+        <div id="wordwritepagesma" class="hidden">
+            <p>➂知らなかった単語を書き出そう</p>
+            <p id="newwrite"></p>
+            <input type="text" id="ones" placeholder="一つ目の単語の意味"><br><input type="text" id="oneens" placeholder="一つ目の単語"><br><br>
+            <input type="text" id="twos" placeholder="二つ目の単語の意味"><br><input type="text" id="twoens"　placeholder="二つ目の単語"><br><br>
+            <input type="text" id="threes" placeholder="三つ目の単語の意味"><br><input type="text" id="threeens" placeholder="三つ目の単語"><br><br>
+            <input type="text" id="fours"placeholder="四つ目の単語の意味"><br><input type="text" id="fourens" placeholder="四つ目の単語"><br><br>
+            <input type="text" id="fives"placeholder="五つ目の単語の意味"><br><input type="text" id="fiveens" placeholder="五つ目の単語"><br><br>
+            <input type="text" id="sixs"placeholder="六つ目の単語の意味"><br><input type="text" id="sixens" placeholder="六つ目の単語"><br><br>
+            <input type="text" id="sevens"placeholder="七つ目の単語の意味"><br><input type="text" id="sevenens" placeholder="七つ目の単語"><br><br>
+            <input type="text" id="eights"placeholder="八つ目の単語の意味"><br><input type="text" id="eightens" placeholder="八つ目の単語"><br><br>
+            <input type="text" id="nines"placeholder="九つ目の単語の意味"><br><input type="text" id="nineens" placeholder="九つ目の単語"><br><br>
+            <input type="text" id="tens"placeholder="十個目の単語の意味"><br><input type="text" id="tenens" placeholder="十個目の単語"><br><br>
+            <p>知らなかった単語の数</p>
+            <input type="number" id="wordsnumbers"><p class="ko">個</p><br>
+            <input type="button" id="okthrees" value="ok!">
+        </div>
+        <div id="test" class="hidden">
+            <p>➃単語をチェックしよう</p>
+            <div id="oneq"><p id="onequ"></p><input type="text" id="onean"><br><input type="button" id="checkone" value="Check!"><p id='oneresult'></p></div><br><br>
+            <div id="twoq"><p id="twoqu"></p><input type="text" id="twoan"><br><input type="button" id="checktwo" value="Check!"><p id='tworesult'></p></div><br><br>
+            <div id="threeq"><p id="threequ"></p><input type="text" id="threean"><br><input type="button" id="checkthree" value="Check!"><p id='threeresult'></p></div><br><br>
+            <div id="fourq"><p id="fourqu"></p><input type="text" id="fouran"><br><input type="button" id="checkfour" value="Check!"><p id='fourresult'></p></div><br><br>
+            <div id="fiveq"><p id="fivequ"></p><input type="text" id="fivean"><br><input type="button" id="checkfive" value="Check!"><p id='fiveresult'></p></div><br><br>
+            <div id="sixq"><p id="sixqu"></p><input type="text" id="sixan"><br><input type="button" id="checksix" value="Check!"><p id='sixresult'></p></div><br><br>
+            <div id="sevenq"><p id="sevenqu"></p><input type="text" id="sevenan"><br><input type="button" id="checkseven" value="Check!"><p id='sevenresult'></p></div><br><br>
+            <div id="eightq"><p id="eightqu"></p><input type="text" id="eightan"><br><input type="button" id="checkeight" value="Check!"><p id='eightresult'></p></div><br><br>
+            <div id="nineq"><p id="ninequ"></p><input type="text" id="ninean"><br><input type="button" id="checknine" value="Check!"><p id='nineresult'></p></div><br><br>
+            <div id="tenq"><p id="tenqu"></p><input type="text" id="tenan"><br><input type="button" id="checkten" value="Check!"><p id='tenresult'></p></div><br><br>
+            <input type="button" id="finish" value="終わる">
+        </div>
+        <div id="end" class="hidden"><br><br><br><br><br>
+            <p>今日はここまでです。お疲れさまでした。</p><br><br><br><br><br>
+        </div>
+    </div>
+    <script>
+        const begin = document.getElementById('begin');
+        const start = document.getElementById('start');
+        const talking = document.getElementById('talking');
+        const topicbtn = document.getElementById('topicbtn');
+        const id = document.getElementById('theme');
+        const answer = document.getElementById('answer');
+        const send = document.getElementById('send');
+        const hintbtn = document.getElementById('hint');
+        const showhint = document.getElementById('showhint');
+        const one = document.getElementById('one');
+        const two = document.getElementById('two');
+        const three = document.getElementById('three');
+        const four = document.getElementById('four');
+        const five = document.getElementById('five');
+        const six = document.getElementById('six');
+        const seven = document.getElementById('seven');
+        const eight = document.getElementById('eight');
+        const nine = document.getElementById('nine');
+        const ten = document.getElementById('ten');
+        const oneen = document.getElementById('oneen');
+        const twoen = document.getElementById('twoen');
+        const threeen = document.getElementById('threeen');
+        const fouren = document.getElementById('fouren');
+        const fiveen = document.getElementById('fiveen');
+        const sixen = document.getElementById('sixen');
+        const sevenen = document.getElementById('sevenen');
+        const eighten = document.getElementById('eighten');
+        const nineen = document.getElementById('nineen');
+        const tenen = document.getElementById('tenen');
+        const newanswer = document.getElementById('newanswer');
+        const ok = document.getElementById('ok');
+        const search = document.getElementById('search');
+        const oktwo = document.getElementById('oktwo');
+        const writepage = document.getElementById('writepage');
+        const okthree = document.getElementById('okthree');
+        const wordwritepage = document.getElementById('wordwritepage');
+        const wordspage = document.getElementById('wordspage');
+        const old = document.getElementById('old');
+        const newwrite = document.getElementById('newwrite');
+        const test = document.getElementById('test');
+        const oneq = document.getElementById('oneq');
+        const twoq = document.getElementById('twoq');
+        const threeq = document.getElementById('threeq');
+        const fourq = document.getElementById('fourq');
+        const fiveq = document.getElementById('fiveq');
+        const sixq = document.getElementById('sixq');
+        const sevenq = document.getElementById('sevenq');
+        const eightq = document.getElementById('eightq');
+        const nineq = document.getElementById('nineq');
+        const tenq = document.getElementById('tenq');
+        const onean = document.getElementById('onean');
+        const twoan = document.getElementById('twoan');
+        const threean = document.getElementById('threean');
+        const fouran = document.getElementById('fouran');
+        const fivean = document.getElementById('fivean');
+        const sixan = document.getElementById('sixan');
+        const sevenan = document.getElementById('sevenan');
+        const eightan = document.getElementById('eightan');
+        const ninean = document.getElementById('ninean');
+        const tenan = document.getElementById('tenan');
+        const onecheck = document.getElementById('onecheck');
+        const twocheck = document.getElementById('twocheck');
+        const threecheck = document.getElementById('threecheck');
+        const fourcheck = document.getElementById('fourcheck');
+        const fivecheck = document.getElementById('fivecheck');
+        const sixcheck = document.getElementById('sixcheck');
+        const sevencheck = document.getElementById('sevencheck');
+        const eightcheck = document.getElementById('eightcheck');
+        const ninecheck = document.getElementById('ninecheck');
+        const tencheck = document.getElementById('tencheck');
+        const oneresult = document.getElementById('oneresult');
+        const tworesult = document.getElementById('tworesult');
+        const threeresult = document.getElementById('threeresult');
+        const fourresult = document.getElementById('fourresult');
+        const fiveresult = document.getElementById('fiveresult');
+        const sixresult = document.getElementById('sixresult');
+        const sevenresult = document.getElementById('sevenresult');
+        const eightresult = document.getElementById('eightresult');
+        const nineresult = document.getElementById('nineresult');
+        const tenresult = document.getElementById('tenresult');
+        const wordsnumber = document.getElementById('wordsnumber');
+        const onequ = document.getElementById('onequ');
+        const twoqu = document.getElementById('twoqu');
+        const threequ = document.getElementById('threequ');
+        const fourqu = document.getElementById('fourqu');
+        const fivequ = document.getElementById('fivequ');
+        const sixqu = document.getElementById('sixqu');
+        const sevenqu = document.getElementById('sevenqu');
+        const eightqu = document.getElementById('eightqu');
+        const ninequ = document.getElementById('ninequ');
+        const tenqu = document.getElementById('tenqu');
+        const end = document.getElementById('end');
+        const select = document.getElementById('select');
+        const wordwritepagesma = document.getElementById('wordwritepagesma');
+        const ones = document.getElementById('ones');
+        const twos = document.getElementById('twos');
+        const threes = document.getElementById('threes');
+        const fours = document.getElementById('fours');
+        const fives = document.getElementById('fives');
+        const sixs = document.getElementById('sixs');
+        const sevens = document.getElementById('sevens');
+        const eights = document.getElementById('eights');
+        const nines = document.getElementById('nines');
+        const tens = document.getElementById('tens');
+        const oneens = document.getElementById('oneens');
+        const twoens = document.getElementById('twoens');
+        const threeens = document.getElementById('threeens');
+        const fourens = document.getElementById('fourens');
+        const fiveens = document.getElementById('fiveens');
+        const sixens = document.getElementById('sixens');
+        const sevenens = document.getElementById('sevenens');
+        const eightens = document.getElementById('eightens');
+        const nineens = document.getElementById('nineens');
+        const tenens = document.getElementById('tenens');
+        const wordsnumbers = document.getElementById('wordsnumbers');
+        const okthrees = document.getElementById('okthrees');
+
+
+
+
+        start.addEventListener('click', () => {
+            begin.classList.add('hidden');
+            talking.classList.remove('hidden');
+        })
+
+        ok.addEventListener('click', () => {
+            old.innerHTML = answer.value;
+            writepage.classList.add('hidden');
+            search.classList.remove('hidden');
+        })
+
+        oktwo.addEventListener('click', () => {
+            newwrite.innerHTML = newanswer.value;
+            search.classList.add('hidden');
+            wordwritepage.classList.remove('hidden');
+            wordwritepagesma.classList.remove('hidden');
+        })
+
+        
+        topicbtn.addEventListener('click', () =>{
+            let talk_theme = ["What's your favorite song?","What's your dream?","Will you tell me about your family?","Why are you learning English?","What are you interested in?","What kind of books do you read?","What sport do you like to play?"];
+            let r = Math.floor( Math.random() * talk_theme.length) ;
+            document.getElementById("theme").innerHTML = talk_theme[r];
+        })
+
+        okthree.addEventListener('click',() =>{
+            if (parseInt(wordsnumber.value) === 0){
+                wordwritepage.classList.add('hidden');
+                end.classList.remove('hidden');
+                select.classList.add('hidden');
+            }else if (parseInt(wordsnumber.value) === 1){
+                wordwritepage.classList.add('hidden');
+                test.classList.remove('hidden');
+                onequ.innerHTML = one.value;
+                twoq.classList.add('hidden');
+                threeq.classList.add('hidden');
+                fourq.classList.add('hidden');
+                fiveq.classList.add('hidden');
+                sixq.classList.add('hidden');
+                sevenq.classList.add('hidden');
+                eightq.classList.add('hidden');
+                nineq.classList.add('hidden');
+                tenq.classList.add('hidden');
+            }
+            else if (parseInt(wordsnumber.value) === 2){
+                wordwritepage.classList.add('hidden');
+                test.classList.remove('hidden');
+                onequ.innerHTML = one.value;
+                twoqu.innerHTML = two.value;
+                threeq.classList.add('hidden');
+                fourq.classList.add('hidden');
+                fiveq.classList.add('hidden');
+                sixq.classList.add('hidden');
+                sevenq.classList.add('hidden');
+                eightq.classList.add('hidden');
+                nineq.classList.add('hidden');
+                tenq.classList.add('hidden');
+            }else if (parseInt(wordsnumber.value) === 3){
+                wordwritepage.classList.add('hidden');
+                test.classList.remove('hidden');
+                onequ.innerHTML = one.value;
+                twoqu.innerHTML = two.value;
+                threequ.innerHTML = three.value;
+                fourq.classList.add('hidden');
+                fiveq.classList.add('hidden');
+                sixq.classList.add('hidden');
+                sevenq.classList.add('hidden');
+                eightq.classList.add('hidden');
+                nineq.classList.add('hidden');
+                tenq.classList.add('hidden');
+            }else if (parseInt(wordsnumber.value) === 4){
+                wordwritepage.classList.add('hidden');
+                test.classList.remove('hidden');
+                onequ.innerHTML = one.value;
+                twoqu.innerHTML = two.value;
+                threequ.innerHTML = three.value;
+                fourqu.innerHTML = four.value;
+                fiveq.classList.add('hidden');
+                sixq.classList.add('hidden');
+                sevenq.classList.add('hidden');
+                eightq.classList.add('hidden');
+                nineq.classList.add('hidden');
+                tenq.classList.add('hidden');
+            }else if (parseInt(wordsnumber.value) === 5){
+                wordwritepage.classList.add('hidden');
+                test.classList.remove('hidden');
+                onequ.innerHTML = one.value;
+                twoqu.innerHTML = two.value;
+                threequ.innerHTML = three.value;
+                fourqu.innerHTML = four.value;
+                fivequ.innerHTML = five.value;
+                sixq.classList.add('hidden');
+                sevenq.classList.add('hidden');
+                eightq.classList.add('hidden');
+                nineq.classList.add('hidden');
+                tenq.classList.add('hidden');
+            }else if (parseInt(wordsnumber.value) === 6){
+                wordwritepage.classList.add('hidden');
+                test.classList.remove('hidden');
+                onequ.innerHTML = one.value;
+                twoqu.innerHTML = two.value;
+                threequ.innerHTML = three.value;
+                fourqu.innerHTML = four.value;
+                fivequ.innerHTML = five.value;
+                sixqu.innerHTML = six.value;
+                sevenq.classList.add('hidden');
+                eightq.classList.add('hidden');
+                nineq.classList.add('hidden');
+                tenq.classList.add('hidden');
+            }else if (parseInt(wordsnumber.value) === 7){
+                wordwritepage.classList.add('hidden');
+                test.classList.remove('hidden');
+                onequ.innerHTML = one.value;
+                twoqu.innerHTML = two.value;
+                threequ.innerHTML = three.value;
+                fourqu.innerHTML = four.value;
+                fivequ.innerHTML = five.value;
+                sixqu.innerHTML = six.value;
+                sevenqu.innerHTML = seven.value;
+                eightq.classList.add('hidden');
+                nineq.classList.add('hidden');
+                tenq.classList.add('hidden');
+            }else if (parseInt(wordsnumber.value) === 8){
+                wordwritepage.classList.add('hidden');
+                test.classList.remove('hidden');
+                onequ.innerHTML = one.value;
+                twoqu.innerHTML = two.value;
+                threequ.innerHTML = three.value;
+                fourqu.innerHTML = four.value;
+                fivequ.innerHTML = five.value;
+                sixqu.innerHTML = six.value;
+                sevenqu.innerHTML = seven.value;
+                eightqu.innerHTML = eight.value;
+                nineq.classList.add('hidden');
+                tenq.classList.add('hidden');
+            }else if (parseInt(wordsnumber.value) === 9){
+                wordwritepage.classList.add('hidden');
+                test.classList.remove('hidden');
+                onequ.innerHTML = one.value;
+                twoqu.innerHTML = two.value;
+                threequ.innerHTML = three.value;
+                fourqu.innerHTML = four.value;
+                fivequ.innerHTML = five.value;
+                sixqu.innerHTML = six.value;
+                sevenqu.innerHTML = seven.value;
+                eightqu.innerHTML = eight.value;
+                ninequ.innerHTML = nine.value;
+                tenq.classList.add('hidden');
+            }else if (parseInt(wordsnumber.value) === 10){
+                wordwritepage.classList.add('hidden');
+                test.classList.remove('hidden');
+                onequ.innerHTML = one.value;
+                twoqu.innerHTML = two.value;
+                threequ.innerHTML = three.value;
+                fourqu.innerHTML = four.value;
+                fivequ.innerHTML = five.value;
+                sixqu.innerHTML = six.value;
+                sevenqu.innerHTML = seven.value;
+                eightqu.innerHTML = eight.value;
+                ninequ.innerHTML = nine.value;
+                tenqu.innerHTML = ten.value;
+
+            }
+        })
+
+
+        okthrees.addEventListener('click',() =>{
+            if (parseInt(wordsnumbers.value) === 0){
+                wordwritepagesma.classList.add('hidden');
+                end.classList.remove('hidden');
+                select.classList.add('hidden');
+            }else if (parseInt(wordsnumbers.value) === 1){
+                wordwritepagesma.classList.add('hidden');
+                test.classList.remove('hidden');
+                onequ.innerHTML = ones.value;
+                twoq.classList.add('hidden');
+                threeq.classList.add('hidden');
+                fourq.classList.add('hidden');
+                fiveq.classList.add('hidden');
+                sixq.classList.add('hidden');
+                sevenq.classList.add('hidden');
+                eightq.classList.add('hidden');
+                nineq.classList.add('hidden');
+                tenq.classList.add('hidden');
+            }
+            else if (parseInt(wordsnumbers.value) === 2){
+                wordwritepagesma.classList.add('hidden');
+                test.classList.remove('hidden');
+                onequ.innerHTML = ones.value;
+                twoqu.innerHTML = twos.value;
+                threeq.classList.add('hidden');
+                fourq.classList.add('hidden');
+                fiveq.classList.add('hidden');
+                sixq.classList.add('hidden');
+                sevenq.classList.add('hidden');
+                eightq.classList.add('hidden');
+                nineq.classList.add('hidden');
+                tenq.classList.add('hidden');
+            }else if (parseInt(wordsnumbers.value) === 3){
+                wordwritepagesma.classList.add('hidden');
+                test.classList.remove('hidden');
+                onequ.innerHTML = ones.value;
+                twoqu.innerHTML = twos.value;
+                threequ.innerHTML = threes.value;
+                fourq.classList.add('hidden');
+                fiveq.classList.add('hidden');
+                sixq.classList.add('hidden');
+                sevenq.classList.add('hidden');
+                eightq.classList.add('hidden');
+                nineq.classList.add('hidden');
+                tenq.classList.add('hidden');
+            }else if (parseInt(wordsnumbers.value) === 4){
+                wordwritepagesma.classList.add('hidden');
+                test.classList.remove('hidden');
+                onequ.innerHTML = ones.value;
+                twoqu.innerHTML = twos.value;
+                threequ.innerHTML = threes.value;
+                fourqu.innerHTML = fours.value;
+                fiveq.classList.add('hidden');
+                sixq.classList.add('hidden');
+                sevenq.classList.add('hidden');
+                eightq.classList.add('hidden');
+                nineq.classList.add('hidden');
+                tenq.classList.add('hidden');
+            }else if (parseInt(wordsnumbers.value) === 5){
+                wordwritepagesma.classList.add('hidden');
+                test.classList.remove('hidden');
+                onequ.innerHTML = ones.value;
+                twoqu.innerHTML = twos.value;
+                threequ.innerHTML = threes.value;
+                fourqu.innerHTML = fours.value;
+                fivequ.innerHTML = fives.value;
+                sixq.classList.add('hidden');
+                sevenq.classList.add('hidden');
+                eightq.classList.add('hidden');
+                nineq.classList.add('hidden');
+                tenq.classList.add('hidden');
+            }else if (parseInt(wordsnumbers.value) === 6){
+                wordwritepagesma.classList.add('hidden');
+                test.classList.remove('hidden');
+                onequ.innerHTML = ones.value;
+                twoqu.innerHTML = twos.value;
+                threequ.innerHTML = threes.value;
+                fourqu.innerHTML = fours.value;
+                fivequ.innerHTML = fives.value;
+                sixqu.innerHTML = sixs.value;
+                sevenq.classList.add('hidden');
+                eightq.classList.add('hidden');
+                nineq.classList.add('hidden');
+                tenq.classList.add('hidden');
+            }else if (parseInt(wordsnumbers.value) === 7){
+                wordwritepagesma.classList.add('hidden');
+                test.classList.remove('hidden');
+                onequ.innerHTML = ones.value;
+                twoqu.innerHTML = twos.value;
+                threequ.innerHTML = threes.value;
+                fourqu.innerHTML = fours.value;
+                fivequ.innerHTML = fives.value;
+                sixqu.innerHTML = sixs.value;
+                sevenqu.innerHTML = sevens.value;
+                eightq.classList.add('hidden');
+                nineq.classList.add('hidden');
+                tenq.classList.add('hidden');
+            }else if (parseInt(wordsnumbers.value) === 8){
+                wordwritepagesma.classList.add('hidden');
+                test.classList.remove('hidden');
+                onequ.innerHTML = ones.value;
+                twoqu.innerHTML = twos.value;
+                threequ.innerHTML = threes.value;
+                fourqu.innerHTML = fours.value;
+                fivequ.innerHTML = fives.value;
+                sixqu.innerHTML = sixs.value;
+                sevenqu.innerHTML = sevens.value;
+                eightqu.innerHTML = eights.value;
+                nineq.classList.add('hidden');
+                tenq.classList.add('hidden');
+            }else if (parseInt(wordsnumbers.value) === 9){
+                wordwritepagesma.classList.add('hidden');
+                test.classList.remove('hidden');
+                onequ.innerHTML = ones.value;
+                twoqu.innerHTML = twos.value;
+                threequ.innerHTML = threes.value;
+                fourqu.innerHTML = fours.value;
+                fivequ.innerHTML = fives.value;
+                sixqu.innerHTML = sixs.value;
+                sevenqu.innerHTML = sevens.value;
+                eightqu.innerHTML = eights.value;
+                ninequ.innerHTML = nines.value;
+                tenq.classList.add('hidden');
+            }else if (parseInt(wordsnumbers.value) === 10){
+                wordwritepagesma.classList.add('hidden');
+                test.classList.remove('hidden');
+                onequ.innerHTML = ones.value;
+                twoqu.innerHTML = twos.value;
+                threequ.innerHTML = threes.value;
+                fourqu.innerHTML = fours.value;
+                fivequ.innerHTML = fives.value;
+                sixqu.innerHTML = sixs.value;
+                sevenqu.innerHTML = sevens.value;
+                eightqu.innerHTML = eights.value;
+                ninequ.innerHTML = nines.value;
+                tenqu.innerHTML = tens.value;
+
+            }
+        })
+
+        checkone.addEventListener('click',() =>{
+            if (onean.value == oneen.value || onean.value == oneens.value){
+                oneresult.innerHTML = 'Correct!'
+            }else if (onean.value != oneen.value || onean.value != oneens.value){
+                oneresult.innerHTML = '答えは「' + oneen.value + '」です。';
+            }
+        })
+
+        checktwo.addEventListener('click',() =>{
+            if (twoan.value == twoen.value || twoan.value == twoens.value){
+                tworesult.innerHTML = 'Correct!'
+            }else if (twoan.value != twoen.value || twoan.value != twoens.value){
+                tworesult.innerHTML = '答えは「' + oneen.value + '」です。';
+            }
+        })
+
+        checkthree.addEventListener('click',() =>{
+            if (threean.value == threeen.value || threean.value == threeens.value){
+                threeresult.innerHTML = 'Correct!'
+            }else if (threean.value != threeen.value || threean.value != threeens.value){
+                threeresult.innerHTML = '答えは「' + threeen.value + '」です。';
+            }
+        })
+
+        checkfour.addEventListener('click',() =>{
+            if (fouran.value == fouren.value || fouran.value == fourens.value){
+                fourresult.innerHTML = 'Correct!'
+            }else if (fouran.value != fouren.value || fouran.value != fourens.value){
+                fourresult.innerHTML = '答えは「' + fouren.value + '」です。';
+            }
+        })
+
+        checkfive.addEventListener('click',() =>{
+            if (fivean.value == fiveen.value || fivean.value == fiveens.value){
+                fiveresult.innerHTML = 'Correct!'
+            }else if (fivean.value != fiveen.value || fivean.value != fiveens.value){
+                fiveresult.innerHTML = '答えは「' + fiveen.value + '」です。';
+            }
+        })
+
+        checksix.addEventListener('click',() =>{
+            if (sixan.value == sixen.value || sixan.value == sixens.value){
+                sixresult.innerHTML = 'Correct!'
+            }else if (sixan.value != sixen.value || sixan.value != sixens.value){
+                sixresult.innerHTML = '答えは「' + sixen.value + '」です。';
+            }
+        })
+
+        checkseven.addEventListener('click',() =>{
+            if (sevenan.value == sevenen.value || sevenan.value == sevenens.value){
+                sevenresult.innerHTML = 'Correct!'
+            }else if (sevenan.value != sevenen.value || sevenan.value != sevenens.value){
+                sevenresult.innerHTML = '答えは「' + sevenen.value + '」です。';
+            }
+        })
+
+        checkeight.addEventListener('click',() =>{
+            if (eightan.value == eighten.value || eightan.value == eightens.value){
+                eightresult.innerHTML = 'Correct!'
+            }else if (eightan.value != eighten.value || eightan.value != eightens.value){
+                eightresult.innerHTML = '答えは「' + eighten.value + '」です。';
+            }
+        })
+
+        checknine.addEventListener('click',() =>{
+            if (ninean.value == nineen.value || ninean.value == nineens.value){
+                nineresult.innerHTML = 'Correct!'
+            }else if (ninean.value != nineen.value || ninean.value != nineens.value){
+                nineresult.innerHTML = '答えは「' + nineen.value + '」です。';
+            }
+        })
+
+        checkten.addEventListener('click',() =>{
+            if (tenan.value == tenen.value || tenan.value == tenens.value){
+                tenresult.innerHTML = 'Correct!'
+            }else if (tenan.value != tenen.value || tenan.value != tenens.value){
+                tenresult.innerHTML = '答えは「' + tenen.value + '」です。';
+            }
+        })
+
+        finish.addEventListener('click',() =>{
+            test.classList.add('hidden');
+            end.classList.remove('hidden');
+            select.classList.add('hidden');
+        })
+
+    </script>
+</body>
+</html>
